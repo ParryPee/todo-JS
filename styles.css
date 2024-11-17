@@ -1,0 +1,185 @@
+/* Modern color scheme and variables */
+:root {
+  --primary-color: #4a90e2;
+  --secondary-color: #f5f6fa;
+  --text-color: #2c3e50;
+  --border-color: #e1e8ed;
+  --success-color: #2ecc71;
+  --danger-color: #e74c3c;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: #f0f2f5;
+  color: var(--text-color);
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Todo list container */
+.todolist {
+  max-width: 800px;
+  margin: 40px auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+/* Header styles */
+.todolist-name {
+  color: var(--primary-color);
+  font-size: 28px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Add task section */
+.add-task {
+  background: var(--secondary-color);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  display: grid;
+  gap: 12px;
+}
+
+.add-task label {
+  font-weight: 500;
+  color: var(--text-color);
+  margin-bottom: 4px;
+}
+
+.add-task input {
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.add-task input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.add-task button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.add-task button:hover {
+  background-color: #357abd;
+  transform: translateY(-1px);
+}
+
+/* Task list table */
+.task-list {
+  overflow-x: auto;
+}
+
+#task-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 16px;
+}
+
+#tablebody td {
+  padding: 16px;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+/* Header row */
+#tablebody tr:first-child td {
+  background-color: var(--secondary-color);
+  font-weight: 600;
+  border-bottom: 2px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  text-align: left;
+}
+
+/* Data rows */
+#tablebody tr:not(:first-child) {
+  transition: background-color 0.3s ease;
+}
+
+#tablebody tr:not(:first-child):hover {
+  background-color: #f8f9fa;
+}
+
+/* Column widths */
+#tablebody td:nth-child(1) { width: 40%; } /* Name */
+#tablebody td:nth-child(2) { width: 20%; } /* Deadline */
+#tablebody td:nth-child(3) { width: 20%; } /* Time left */
+#tablebody td:nth-child(4) { width: 20%; text-align: center; } /* Completed */
+
+/* Complete button styles */
+#tablebody tr:not(:first-child) td button {
+  background-color: var(--success-color);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  min-width: 100px;
+}
+
+#tablebody tr:not(:first-child) td button:hover {
+  background-color: #27ae60;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#tablebody tr:not(:first-child) td button:active {
+  transform: translateY(0);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .todolist {
+      margin: 20px 10px;
+      padding: 16px;
+  }
+  
+  .add-task {
+      padding: 16px;
+  }
+  
+  .add-task input, 
+  .add-task button {
+      width: 100%;
+  }
+
+  #task-table {
+      font-size: 14px;
+  }
+
+  #tablebody td {
+      padding: 12px 8px;
+  }
+
+  #tablebody td button {
+      padding: 6px 12px;
+      min-width: 80px;
+  }
+}

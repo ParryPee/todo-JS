@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My todo list</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="./main.js"></script>
+    </head>
+    <body>
+        <div class="todolist">
+            <h2 class="todolist-name">Larry's todo list</h2>
+            <div class="add-task">
+                <label for="tasks">Enter the name for your task here:</label>
+                <input name="tasks" placeholder="Enter task here" id="newtaskname"/>
+                <label for="taskdl">Enter the name for your task here DD/MM/YYYY:</label>
+                <input name="taskdl"  placeholder="Enter task deadline here" id="newtaskdeadline" type="date"/>
+                <button onclick="createTask()">Add new task</button>
+            </div>
+            <div class="task-list" id="all-tasks">
+                <table id="task-table">
+                    <tbody id="tablebody">
+                        <td>Name of task</td>
+                        <td>Deadline</td>
+                        <td>Time left</td>
+                        <td>Completed?</td>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    
+    </body>
+</html>
